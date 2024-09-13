@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import styled from 'styled-components';
+import Tabs from './Tabs';
+import Gallery from './Gallery';
+
+const AppContainer = styled.div`
+  display: flex;
+  height: 100vh;
+`;
+
+const LeftContainer = styled.div`
+  flex: 1;
+  background-color: #222;
+`;
+
+const RightContainer = styled.div`
+  flex: 1;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <LeftContainer />
+      <RightContainer>
+        <Tabs />
+        <Gallery />
+      </RightContainer>
+    </AppContainer>
   );
 }
 
